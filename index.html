@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Login Tutor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section id="view-login">
+      <h1>Entrar</h1>
+      <form id="form-login">
+        <input id="login-email" type="email" placeholder="Email" required />
+        <input id="login-pass" type="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p>Não tem conta? <button id="btn-show-signup" type="button">Criar conta</button></p>
+    </section>
+
+    <section id="view-signup" class="hidden">
+      <h1>Criar conta</h1>
+      <form id="form-signup">
+        <input id="signup-name" type="text" placeholder="Nome completo" required />
+        <input id="signup-email" type="email" placeholder="Email" required />
+        <input id="signup-pass" type="password" placeholder="Senha" required />
+        <button type="submit">Criar</button>
+      </form>
+      <button id="btn-back-login" type="button">Voltar</button>
+    </section>
+
+    <section id="view-welcome" class="hidden">
+      <h1>Bem-vindo(a), <span id="welcome-name"></span>!</h1>
+      <button id="btn-go-ar">Abrir RA</button>
+      <button id="btn-open-feedback">Feedback</button>
+      <button id="btn-logout">Sair</button>
+      <button id="btn-manage-users">Gerir Utilizadores</button>
+    </section>
+
+    <section id="view-feedback" class="hidden">
+      <h2>Feedback</h2>
+      <form id="form-feedback">
+        <select id="feedback-rating">
+          <option>5</option><option>4</option><option>3</option><option>2</option><option>1</option>
+        </select>
+        <textarea id="feedback-comment" placeholder="Comentário"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <button id="btn-back-welcome" type="button">Voltar</button>
+    </section>
+  </main>
+
+  <section id="view-users" class="hidden">
+  <h2>Gestão de Utilizadores</h2>
+  <table  width="100%">
+    <thead>
+      <tr><th>Nome</th><th>Email</th><th>Ações</th></tr>
+    </thead>
+    <tbody id="users-table"></tbody>
+  </table>
+  <button id="btn-back-welcome2">Voltar</button>
+</section>
+
+
+  <script type="module" src="app.js"></script>
+
+  <!-- Modal de edição -->
+<div id="edit-modal" class="hidden modal">
+  <div class="modal-content">
+    <h3>Editar Utilizador</h3>
+    <form id="form-edit-user">
+      <label>Nome:
+        <input type="text" id="edit-name" required>
+      </label>
+            <label>Email:
+        <input type="text" id="edit-email" required>
+      </label>
+      <label>Nova senha:
+        <input type="password" id="edit-pass" placeholder="(deixe em branco p/ não alterar)">
+      </label>
+      <input type="hidden" id="edit-email">
+      <button type="submit">Salvar</button>
+      <button type="button" id="btn-cancel-edit">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
